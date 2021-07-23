@@ -4005,7 +4005,6 @@ blockquote {
     display: none;
     text-indent: -9999px;
     background-image: url('../img/to-top.png');
-    background-size: contain;
     background-repeat: no-repeat;
     background-color: #252525;
     z-index: 100;
