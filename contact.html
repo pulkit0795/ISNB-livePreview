@@ -215,7 +215,6 @@
                         <input type="submit" class="wpcf7-submit" value="send" />
                     </form>
                     <!-- .wpcf7 end -->
-                    <div id="tp"></div>
                 </div>
                 <!-- .col-md-6 end -->
 
@@ -421,33 +420,6 @@
     <script src="js/include.js"></script>
     <!-- custom js functions -->
 
-    <!-- <script>
-      $(function () {
-
-        $('form').on('submit', function (e) {
-
-          e.preventDefault();
-
-          $.ajax({
-            url: "https://formsubmit.co/ajax/pulkit0795@yahoo.com",
-            method: "POST",
-            data: {
-                name: "FormSubmit",
-                message: "I'm from Devro LABS"
-            },
-            dataType: "json"
-            // success: function () {
-            //   alert('form was submitted');
-            // }
-          }).done(function(data) {
-                alert(data);
-            });
-
-        });
-
-      });
-    </script> -->
-
     <script>
         /* <![CDATA[ */
         jQuery(document).ready(function($) {
@@ -468,20 +440,15 @@
                     'email': email,
                     'message': contact_message
                 });
-                document.getElementById("tp").innerHTML = email;
+                
                 $.ajax({
-                    // type: 'POST',
-                    // url: "contact.php",
                     method:'POST',
                     url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
                     data: ({
-                        // 'action': 'contact',
-                        // 'form_data': form_data
-                        name: name,
-//                         message: form_data,
-                        enq:inquiry,
-                        abc: "this is abc",
-                        messaage: "I'm from Devro LABS"
+                        Inquiry: inquiry,
+                        Name: name+lastname,
+                        E-mail: email,
+                        Message: contact_message
                     })
                 }).done(function(data) {
                     alert(data);
