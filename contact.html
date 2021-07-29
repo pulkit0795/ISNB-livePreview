@@ -471,13 +471,13 @@
                 // document.getElementById("tp").innerHTML = inquiry+"\n"+contact_message+"\n"+name+lastname;
                 var email_pat = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
         
-                if(!/^[a-zA-Z][a-zA-Z\s]*$/i.test(name) && 0){
+                if(!/^[a-zA-Z][a-zA-Z\s]*$/i.test(name)){
                     alert("Enter a valid Name!");
                 }
-                else if (!email_pat.test(email) && 0) {
+                else if (!email_pat.test(email)) {
                     alert('Enter a valid E-Mail address!');
                 }
-                else if(contact_message==" "){
+                else if(contact_message==""){
                     alert("Enter a valid message!");
                 }
                 else{
