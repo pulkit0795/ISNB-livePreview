@@ -174,7 +174,7 @@
 
                             <select class="wpcf7-form-control-wrap wpcf7-select" id="contact-inquiry">
                                     <option value="I need an offer for contract logistics">I need an offer for contract logistics</option>
-                                    <option value="I need an offer for air freight">I need an offer for air freight</option>
+                                    <option value="I need an offer for air freight">I need an offer for transportation</option>
                                     <option value="I want to become your partner">I want to become your partner</option>
                                     <option value="I have some other request">I have some other request</option>
                                 </select>
@@ -185,12 +185,13 @@
                                     <span class="required">*</span> First Name:
                                 </label>
 
-                            <input type="text" class="wpcf7-text" id="contact-name">
+                            <input type="text" class="wpcf7-text" id="contact-name" required>
                         </fieldset>
 
                         <fieldset>
                             <label>
-                                    <span class="required">*</span> Last Name:
+                                    <!-- <span class="required">*</span>  -->
+                                    Last Name:
                                 </label>
 
                             <input type="text" class="wpcf7-text" id="contact-last-name">
@@ -201,7 +202,7 @@
                                     <span class="required">*</span> Email:
                                 </label>
 
-                            <input type="email" class="wpcf7-text" id="contact-email">
+                            <input type="email" class="wpcf7-text" id="contact-email" required>
                         </fieldset>
 
                         <fieldset>
@@ -209,18 +210,19 @@
                                     <span class="required">*</span> Message:
                                 </label>
 
-                            <textarea rows="8" class="wpcf7-textarea" id="contact-message"></textarea>
+                            <textarea rows="8" class="wpcf7-textarea" id="contact-message" required></textarea>
                         </fieldset>
-
+                        <!-- <button class="wpcf7-submit">Submit</button> -->
                         <input type="submit" class="wpcf7-submit" value="send" />
                     </form>
                     <!-- .wpcf7 end -->
+                    <!-- <div id="tp"></div> -->
                 </div>
                 <!-- .col-md-6 end -->
 
                 <div class="col-md-6">
                     <div class="custom-heading">
-                        <h3>Trucking headquarters</h3>
+                        <h3>ISNB headquarters</h3>
                     </div>
                     <!-- .custom-heading end -->
 
@@ -420,6 +422,33 @@
     <script src="js/include.js"></script>
     <!-- custom js functions -->
 
+    <!-- <script>
+      $(function () {
+
+        $('form').on('submit', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            url: "https://formsubmit.co/ajax/pulkit0795@yahoo.com",
+            method: "POST",
+            data: {
+                name: "FormSubmit",
+                message: "I'm from Devro LABS"
+            },
+            dataType: "json"
+            // success: function () {
+            //   alert('form was submitted');
+            // }
+          }).done(function(data) {
+                alert(data);
+            });
+
+        });
+
+      });
+    </script> -->
+
     <script>
         /* <![CDATA[ */
         jQuery(document).ready(function($) {
@@ -440,17 +469,18 @@
                     'email': email,
                     'message': contact_message
                 });
-                
+                // document.getElementById("tp").innerHTML = inquiry+"\n"+contact_message+"\n"+name+lastname;
                 $.ajax({
+                    // type: 'POST',
+                    // url: "contact.php",
                     method:'POST',
                     url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
                     data: ({
-                        
                         _subject: "New Submission from "+ name,
-                        Inquiry: inquiry,
-                        Name: name+" "+lastname,
+                        inquiry: inquiry,
+                        Name: name+lastname,
                         Email: email,
-                        Message: contact_message
+                        message: contact_message
                     })
                 }).done(function(data) {
                     alert(data);
