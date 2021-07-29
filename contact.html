@@ -201,7 +201,7 @@
                                     <span class="required">*</span> Email:
                                 </label>
 
-                            <input type="url" class="wpcf7-text" id="contact-email">
+                            <input type="email" class="wpcf7-text" id="contact-email">
                         </fieldset>
 
                         <fieldset>
@@ -215,6 +215,7 @@
                         <input type="submit" class="wpcf7-submit" value="send" />
                     </form>
                     <!-- .wpcf7 end -->
+                    <div id="tp"></div>
                 </div>
                 <!-- .col-md-6 end -->
 
@@ -223,6 +224,8 @@
                         <h3>Trucking headquarters</h3>
                     </div>
                     <!-- .custom-heading end -->
+
+                    
 
                     <!-- <div id="map"></div> --> <!--30.372575753292413, 75.54731416027869-->
                     <iframe src="http://maps.google.com/maps?q=30.372575753292413,75.54731416027869&z=16&output=embed" height=450px width=100% margin-bottom= 20px></iframe>
@@ -418,87 +421,38 @@
     <script src="js/include.js"></script>
     <!-- custom js functions -->
 
+    <!-- <script>
+      $(function () {
+
+        $('form').on('submit', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            url: "https://formsubmit.co/ajax/pulkit0795@yahoo.com",
+            method: "POST",
+            data: {
+                name: "FormSubmit",
+                message: "I'm from Devro LABS"
+            },
+            dataType: "json"
+            // success: function () {
+            //   alert('form was submitted');
+            // }
+          }).done(function(data) {
+                alert(data);
+            });
+
+        });
+
+      });
+    </script> -->
+
     <script>
         /* <![CDATA[ */
         jQuery(document).ready(function($) {
             'use strict';
-            // GOOGLE MAPS START
-            // window.marker = null;
-
-            // function initialize() {
-            //     var map;
-
-            //     var nottingham = new google.maps.LatLng(52.934658, -1.131450);
-
-            //     var style = [{
-            //             "featureType": "road",
-            //             "elementType": "labels.icon",
-            //             "stylers": [{
-            //                     "saturation": 1
-            //                 },
-            //                 {
-            //                     "gamma": 1
-            //                 },
-            //                 {
-            //                     "visibility": "on"
-            //                 },
-            //                 {
-            //                     "hue": "#e6ff00"
-            //                 }
-            //             ]
-            //         },
-            //         {
-            //             "elementType": "geometry",
-            //             "stylers": [{
-            //                 "saturation": -85
-            //             }]
-            //         }
-            //     ];
-
-            //     var mapOptions = {
-            //         // SET THE CENTER
-            //         center: nottingham,
-            //         // SET THE MAP STYLE & ZOOM LEVEL
-            //         mapTypeId: google.maps.MapTypeId.ROADMAP,
-            //         zoom: 9,
-            //         // SET THE BACKGROUND COLOUR
-            //         backgroundColor: "#eeeeee",
-            //         // REMOVE ALL THE CONTROLS EXCEPT ZOOM
-            //         panControl: true,
-            //         zoomControl: true,
-            //         mapTypeControl: true,
-            //         scaleControl: true,
-            //         streetViewControl: true,
-            //         overviewMapControl: true,
-            //         scrollwheel: false,
-            //         zoomControlOptions: {
-            //             style: google.maps.ZoomControlStyle.SMALL
-            //         }
-
-            //     };
-            //     map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-            //     // SET THE MAP TYPE
-            //     var mapType = new google.maps.StyledMapType(style, {
-            //         name: "Grayscale"
-            //     });
-            //     map.mapTypes.set('grey', mapType);
-            //     map.setMapTypeId('grey');
-
-            //     //CREATE A CUSTOM PIN ICON
-            //     var marker_image = 'img/pin.png';
-            //     var pinIcon = new google.maps.MarkerImage(marker_image, null, null, null, new google.maps.Size(21, 34));
-
-            //     marker = new google.maps.Marker({
-            //         position: nottingham,
-            //         map: map,
-            //         icon: pinIcon,
-            //         title: 'Trucking Headquarters, Nothingham'
-            //     });
-            // }
-
-            // google.maps.event.addDomListener(window, 'load', initialize);
-
+            
             // CONTACT FORM AJAX SUBMIT START
             $('.wpcf7 .wpcf7-submit').on('click', function(event) {
                 event.preventDefault();
@@ -514,19 +468,18 @@
                     'email': email,
                     'message': contact_message
                 });
+                document.getElementById("tp").innerHTML = email;
                 $.ajax({
                     // type: 'POST',
                     // url: "contact.php",
-                    method:"POST",
-                    url:"https://formsubmit.co/ajax/pulkit0795@gmail.com",
-                    data: {
-                        name : "hiii",
-                        message : form_data,
-//                         'name':"
-//                         'action': 'contact',
-//                         'form_data': form_data
-                    },
-                    dataType: "json"
+                    method:'POST',
+                    url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
+                    data: ({
+                        // 'action': 'contact',
+                        // 'form_data': form_data
+                        name: "FormSubmit",
+                        message: "I'm from Devro LABS"
+                    })
                 }).done(function(data) {
                     alert(data);
                 });
