@@ -517,12 +517,16 @@
                 $.ajax({
                     // type: 'POST',
                     // url: "contact.php",
-                    method:'POST',
+                    method:"POST",
                     url:"https://formsubmit.co/ajax/pulkit0795@gmail.com",
                     data: {
-                        'action': 'contact',
-                        'form_data': form_data
-                    }
+                        name : "hiii",
+                        message : form_data,
+//                         'name':"
+//                         'action': 'contact',
+//                         'form_data': form_data
+                    },
+                    dataType: "json"
                 }).done(function(data) {
                     alert(data);
                 });
