@@ -61,46 +61,47 @@
         }
     }
 
-    function SubmitDriverForm (){
-        var data = $('#driverForm').serializeArray();
+    // function SubmitDriverForm (){
+    //     event.preventDefault();
+    //     var data = $('#driverForm').serializeArray();
 
-        var dvrName = data[0].value;
-        var visa = data[1].value;
-        var availability = data[2].value;
-        var license = data[3].value;
-        var experience = data[4].value;
-        var phone = data[5].value;
+    //     var dvrName = data[0].value;
+    //     var visa = data[1].value;
+    //     var availability = data[2].value;
+    //     var license = data[3].value;
+    //     var experience = data[4].value;
+    //     var phone = data[5].value;
 
-        if (dvrName=="" || visa=="") {
-            alert('Enter a valid');
-        }
-        else{
-            $.ajax({
-                // type: 'POST',
-                // url: "contact.php",
-                method:'POST',
-                url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
-                data: ({
-                    _subject: "New Driver Application from "+ name,
-                    Visa Status: visa,
-                    Availability: availability,
-                    License type: license,
-                    Past Experience: experience,
-                    Phone Number: phone
-                })
-            }).done(function(data) {
-                const myArr = data.split("\"");
-                if(myArr[3]=="true"){
-                    $("#driverForm").each(function(){
-                        this.reset();
-                    });
-                }
-                alert(myArr[7]);
-            });
+    //     if (dvrName=="" || visa=="") {
+    //         alert('Enter a valid');
+    //     }
+    //     else{
+    //         $.ajax({
+    //             // type: 'POST',
+    //             // url: "contact.php",
+    //             method:'POST',
+    //             url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
+    //             data: ({
+    //                 _subject: "New Driver Application from "+ name,
+    //                 Visa Status: visa,
+    //                 Availability: availability,
+    //                 License type: license,
+    //                 Past Experience: experience,
+    //                 Phone Number: phone
+    //             })
+    //         }).done(function(data) {
+    //             const myArr = data.split("\"");
+    //             if(myArr[3]=="true"){
+    //                 $("#driverForm").each(function(){
+    //                     this.reset();
+    //                 });
+    //             }
+    //             alert(myArr[7]);
+    //         });
 
             
-        }
-    }
+    //     }
+    // }
     </script>
 </head>
 
@@ -234,18 +235,6 @@
 
                     <!-- .contact form start -->
                     <form class="wpcf7 clearfix" id="form1">
-                        <!-- <fieldset>
-                            <label>
-                                    <span class="required">*</span> Your request:
-                                </label>
-
-                            <select class="wpcf7-form-control-wrap wpcf7-select" id="contact-inquiry">
-                                    <option value="I need an offer for contract logistics">I need an offer for contract logistics</option>
-                                    <option value="I need an offer for air freight">I need an offer for transportation</option>
-                                    <option value="I want to become your partner">I want to become your partner</option>
-                                    <option value="I have some other request">I have some other request</option>
-                                </select>
-                        </fieldset> -->
                         <fieldset>
                             <label>
                                     <span class="required">*</span> Your request:
@@ -323,46 +312,47 @@
                         <h2>want to become our driver?</h2>
                     </div>
 
-                    <form class="wpcf7 driver-app-form clearfix" id="driverForm">
+                    <form class="wpcf71 driver-app-form clearfix" id="driverForm">
                         <fieldset>
                             <label><span class="required">*</span> Full Name:</label>
 
-                            <input type="text" class="wpcf7-text" id="driver-name" required>
+                            <input type="text" class="wpcf71-text" id="driver-name" required>
                         </fieldset>
 
                         <fieldset>
                             <label><span class="required">*</span> Visa Status:</label>
 
-                            <input type="text" class="wpcf7-text" id="visa-status" required>
+                            <input type="text" class="wpcf71-text" id="visa-status" required>
                         </fieldset>
 
                         <fieldset>
                             <label><span class="required">*</span> Availability:</label>
                             
-                            <input type="text" class="wpcf7-text" id="availability" required>
+                            <input type="text" class="wpcf71-text" id="availability" required>
                         </fieldset>
 
                         <fieldset>
                             <label><span class="required">*</span> License type:</label>
 
-                            <input class="wpcf7-text" id="driver-licence-type" required>
+                            <input class="wpcf71-text" id="driver-licence-type" required>
                         </fieldset>
 
                         <fieldset>
                             <label><span class="required">*</span> Past Experience:</label>
 
-                            <input class="wpcf7-text" id="past-xp" required>
+                            <input class="wpcf71-text" id="past-xp" required>
                         </fieldset>
 
                         <fieldset>
                             <label><span class="required">*</span> Phone number:</label>
 
-                            <input class="wpcf7-text" id="driver-phone">
+                            <input class="wpcf71-text" id="driver-phone" required>
                         </fieldset>
+                        <!-- <input onclick="SubmitDriverForm()" type="submit" class="wpcf71-submit" value="apply now"> -->
 
-                        <button onclick="SubmitDriverForm()" type="submit" class="wpcf71-submit">Apply Now</button>
+                        <!-- <button onclick="SubmitDriverForm()" type="submit" class="wpcf71-submit">Apply Now</button> -->
 
-                        <!-- <input type="submit" class="wpcf7-submit" value="apply now"> -->
+                        <input type="submit" class="wpcf71-submit" value="apply now">
                     </form>
                     <!-- .wpcf7 end -->
                 </div>
@@ -544,8 +534,65 @@
         /* <![CDATA[ */
         jQuery(document).ready(function($) {
             'use strict';
+
+            // DRIVER APPLICATION FORM
+            $('.wpcf71 .wpcf71-submit').on('click', function(event) {
+                event.preventDefault();
+
+                var dvrName = $('#driver-name').val();
+                var visa = $('#visa-status').val();
+                var availability = $('#availability').val();
+                var license = $('#driver-license-type').val();
+                var experience = $('#past-xp').val();
+                var phone = $('#driver-phone').val();
+
+                
+                // document.getElementById("tp").innerHTML = inquiry+"\n"+contact_message+"\n"+name+lastname;
+                // var email_pat = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+                if(!/^[a-zA-Z][a-zA-Z\s]*$/i.test(dvrName)){
+                    alert("Enter a valid Name!");
+                }
+                else if (visa=="") {
+                    alert('Enter a valid Visa Status!');
+                }
+                else if (license=="") {
+                    alert('Enter a valid License type!');
+                }
+                else if (experience=="") {
+                    alert('Enter a valid Past experience!');
+                }
+                else if (!/^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$/.test(phone)) {
+                    alert('Enter a valid Phone number!');
+                }
+                else{
+                    $.ajax({
+                        // type: 'POST',
+                        // url: "contact.php",
+                        method:'POST',
+                        url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
+                        data: ({
+                            _subject: "New Driver Application from "+ dvrName,
+                            VisaStatus: visa,
+                            Availability: availability,
+                            LicenseType: license,
+                            PastExperience: experience,
+                            PhoneNumber: phone
+                        })
+                    }).done(function(data) {
+                        const myArr = data.split("\"");
+                        if(myArr[3]=="true"){
+                            $("#driverForm").each(function(){
+                                this.reset();
+                            });
+                        }
+                        alert(myArr[7]);
+                    });
+                }
+                
+            }); // CONTACT FORM AJAX SUBMIT END
+
             
-            // CONTACT FORM AJAX SUBMIT START
+            // CONTACT FORM AJAX SUBMIT START --- request
             $('.wpcf7 .wpcf7-submit').on('click', function(event) {
                 event.preventDefault();
                 var inquiry = $('#contact-inquiry').val();
@@ -599,6 +646,7 @@
                 
             }); // CONTACT FORM AJAX SUBMIT END
 
+            
         });
         /* ]]> */
     </script>
