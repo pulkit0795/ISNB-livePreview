@@ -61,47 +61,6 @@
         }
     }
 
-    // function SubmitDriverForm (){
-    //     event.preventDefault();
-    //     var data = $('#driverForm').serializeArray();
-
-    //     var dvrName = data[0].value;
-    //     var visa = data[1].value;
-    //     var availability = data[2].value;
-    //     var license = data[3].value;
-    //     var experience = data[4].value;
-    //     var phone = data[5].value;
-
-    //     if (dvrName=="" || visa=="") {
-    //         alert('Enter a valid');
-    //     }
-    //     else{
-    //         $.ajax({
-    //             // type: 'POST',
-    //             // url: "contact.php",
-    //             method:'POST',
-    //             url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
-    //             data: ({
-    //                 _subject: "New Driver Application from "+ name,
-    //                 Visa Status: visa,
-    //                 Availability: availability,
-    //                 License type: license,
-    //                 Past Experience: experience,
-    //                 Phone Number: phone
-    //             })
-    //         }).done(function(data) {
-    //             const myArr = data.split("\"");
-    //             if(myArr[3]=="true"){
-    //                 $("#driverForm").each(function(){
-    //                     this.reset();
-    //                 });
-    //             }
-    //             alert(myArr[7]);
-    //         });
-
-            
-    //     }
-    // }
     </script>
 </head>
 
@@ -137,10 +96,10 @@
                                         <li class="dropdown">
                                             <a href="services.html" data-toggle="dropdown" class="dropdown-toggle">Services</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="services.html">Services overview</a></li>
-                                                <li><a href="overland-transportation.html">Transportation</a></li>
+                                                <li><a href="storage.html">Storage</a></li>
                                                 <li><a href="warehousing.html">Warehousing</a></li>
-                                                <li><a href="supply-chain-management.html">Supply chain management</a></li>
+                                                <li><a href="overland-transportation.html">Transportation</a></li>
+                                                <li><a href="home-delivery.html">Home delivery</a></li>
                                             </ul>
                                             <!-- .dropdown-menu end -->
                                         </li>
@@ -160,10 +119,10 @@
                                             <li>
                                                 <a href="#">Services</a>
                                                 <ul class="dl-submenu">
-                                                    <li><a href="services.html">Services overview</a></li>
-                                                    <li><a href="overland-transportation.html">Transportation</a></li>
+                                                    <li><a href="storage.html">Storage</a></li>
                                                     <li><a href="warehousing.html">Warehousing</a></li>
-                                                    <li><a href="supply-chain-management.html">Supply chain management</a></li>
+                                                    <li><a href="overland-transportation.html">Transportation</a></li>
+                                                    <li><a href="home-delivery.html">Home delivery</a></li>
                                                 </ul>
                                                 <!-- dl-submenu end -->
                                             </li>
@@ -267,7 +226,7 @@
                         <input type="submit" class="wpcf7-submit" value="send" />
                     </form>
                     <!-- .wpcf7 end -->
-                    <div id="tp"></div>
+                    <!-- <div id="tp"></div> -->
                 </div>
                 <!-- .col-md-6 end -->
 
@@ -305,8 +264,8 @@
 
             </div>
             <!-- .row end -->
-            <div class="row">
-                
+            <div id="driver-apply"><p></p><br><p></p><p></p></div>
+            <div class="row" >
                 <div class="col-md-12">
                     <div class="custom-heading">
                         <h2>want to become our driver?</h2>
@@ -334,7 +293,7 @@
                         <fieldset>
                             <label><span class="required">*</span> License type:</label>
 
-                            <input class="wpcf71-text" id="driver-licence-type" required>
+                            <input class="wpcf71-text" id="driver-license-type" required>
                         </fieldset>
 
                         <fieldset>
@@ -572,6 +531,7 @@
                         url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
                         data: ({
                             _subject: "New Driver Application from "+ dvrName,
+                            Name: dvrName,
                             VisaStatus: visa,
                             Availability: availability,
                             LicenseType: license,

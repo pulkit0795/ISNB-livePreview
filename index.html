@@ -44,6 +44,36 @@
 
     <!-- <link rel="stylesheet" href="style-switcher/styleSwitcher.css" /> -->
     <!-- styleswitcher -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+    <script>
+    function SubForm (){
+        var mail = $('#newsletter').serializeArray();
+        mail = mail[0].value;
+        var email_pat = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+        if (!email_pat.test(mail)) {
+            alert('Enter a valid E-Mail address!');
+        }
+        else{
+            $.ajax({
+                url:'https://api.apispreadsheets.com/data/16346/',
+                type:'post',
+                data:$("#newsletter").serializeArray(),
+                success: function(){
+                  alert("Successfully Subscribed :)");
+                  $("#newsletter").each(function(){
+                        this.reset();
+                    });
+                },
+                error: function(){
+                  alert("Sorry, there was an error :(")
+                }
+            });
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -78,10 +108,10 @@
                                         <li class="dropdown">
                                             <a href="services.html" data-toggle="dropdown" class="dropdown-toggle">Services</a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="services.html">Services overview</a></li>
-                                                <li><a href="overland-transportation.html">Transportation</a></li>
+                                                <li><a href="storage.html">Storage</a></li>
                                                 <li><a href="warehousing.html">Warehousing</a></li>
-                                                <li><a href="supply-chain-management.html">Supply chain management</a></li>
+                                                <li><a href="overland-transportation.html">Transportation</a></li>
+                                                <li><a href="home-delivery.html">Home delivery</a></li>
                                             </ul>
                                             <!-- .dropdown-menu end -->
                                         </li>
@@ -101,10 +131,10 @@
                                             <li>
                                                 <a href="#">Services</a>
                                                 <ul class="dl-submenu">
-                                                    <li><a href="services.html">Services overview</a></li>
-                                                    <li><a href="overland-transportation.html">Transportation</a></li>
+                                                    <li><a href="storage.html">Storage</a></li>
                                                     <li><a href="warehousing.html">Warehousing</a></li>
-                                                    <li><a href="supply-chain-management.html">Supply chain management</a></li>
+                                                    <li><a href="overland-transportation.html">Transportation</a></li>
+                                                    <li><a href="home-delivery.html">Home delivery</a></li>
                                                 </ul>
                                                 <!-- dl-submenu end -->
                                             </li>
@@ -606,16 +636,10 @@
                     <div class="carousel-container">
                         <div id="client-carousel" class="owl-carousel owl-carousel-navigation">
                             <div class="owl-item"><img src="img/pics/client01.png" alt="" /></div>
-                            <div class="owl-item"><img src="img/pics/client01.png" alt="" /></div>
-                            <div class="owl-item"><img src="img/pics/client01.png" alt="" /></div>
-                            <div class="owl-item"><img src="img/pics/client01.png" alt="" /></div>
-                            <div class="owl-item"><img src="img/pics/client01.png" alt="" /></div>
-                            <!-- <div class="owl-item"><img src="img/pics/client01.png" alt="" /></div> -->
-                            <!-- <div class="owl-item"><img src="img/pics/client02.png" alt="" /></div>
+                            <div class="owl-item"><img src="img/pics/client02.png" alt="" /></div>
                             <div class="owl-item"><img src="img/pics/client03.png" alt="" /></div>
                             <div class="owl-item"><img src="img/pics/client04.png" alt="" /></div>
                             <div class="owl-item"><img src="img/pics/client05.png" alt="" /></div>
-                            <div class="owl-item"><img src="img/pics/client06.png" alt="" /></div> -->
                         </div>
                         <!-- .owl-carousel.owl-carousel-navigation end -->
                     </div>
@@ -645,10 +669,12 @@
                             </p>
 
                             <br />
-
-                            <form class="newsletter">
-                                <input class="email" type="email" placeholder="Your email...">
-                                <input type="submit" class="submit" value="">
+                            <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdqgFxAbGh_ikeyYnKbOO-Do48lFQysbjmqwwk1HOICWByT1A/viewform?embedded=true" width="640" height="403" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+ -->
+                            <form class="newsletter" id="newsletter">
+                                <input class="email" name="email" type="email" placeholder="Your email...">
+                                <button onclick="SubForm()" type="submit" class="submit"></button>
+                                <!-- <input type="submit" class="submit" value="" onclick="Subform()"> -->
                             </form>
                         </li>
                         <!-- .widget.widget_newsletterwidget end -->
@@ -663,13 +689,10 @@
                             </div>
 
                             <ul>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Company history</a></li>
-                                <li><a href="#">Company Events</a></li>
-                                <li><a href="#">Supply chain management</a></li>
-                                <li><a href="#">Warehousing</a></li>
-                                <li><a href="#">Company news</a></li>
-                                <li><a href="#">Online driver application</a></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="contact.html#driver-apply">Online driver application</a></li>
                             </ul>
                         </li>
                         <!-- .widget-pages end -->
@@ -680,17 +703,15 @@
                         <!-- .widget-pages start -->
                         <li class="widget widget_pages">
                             <div class="title">
-                                <h3>Industry solutions</h3>
+                                <h3>Services</h3>
                             </div>
 
                             <ul>
-                                <li><a href="#">Overland transportation</a></li>
-                                <!-- <li><a href="air-freight.html">Air freight</a></li> -->
-                                <!-- <li><a href="ocean-freight.html">Ocean freight</a></li> -->
-                                <li><a href="#">Large projects</a></li>
-                                <li><a href="#">Rail international shipping</a></li>
-                                <li><a href="#">Contract logistics</a></li>
-                                <li><a href="#">Packaging options</a></li>
+                                <li><a href="storage.html">Storage</a></li>
+                                <li><a href="warehousing.html">Warehousing</a></li>
+                                <li><a href="overland-transportation.html">Transportation</a></li>
+                                <li><a href="home-delivery.html">Home delivery</a></li>
+
                             </ul>
                         </li>
                         <!-- .widget-pages end -->
@@ -703,22 +724,24 @@
                                 <h3>contact us</h3>
                             </div>
 
-                            <address>
-                                    xyz Street, <br />
-                                    ABC, Australia
-                                </address>
+                            <a href="https://www.google.com/maps/place/ISNB+LOGISTICS+PTY+LTD/@-37.9877725,145.1883516,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad613ffa2a459cf:0xeccc999eb3865022!8m2!3d-37.9879229!4d145.1918141"><address>
+                                    ISNB Logistics Pty Ltd, <br/>
+                                    102 Bridge Rd, Keysborough, <br />
+                                    VIC 3175, Australia
+                                </address></a>
 
-                            <span class="text-big">
-                                    +65 555 555 5555
-                                </span>
+                            <a href="callto://+650413502272"><span class="text-big">
+                                    041 350 2272
+                                </span></a>
                             <br />
 
-                            <a href="mailto:">info@isnblogistics.com</a>
+                            <a href="mailto:admin@isnblogistics.com.au">admin@isnblogistics.com.au</a>
                             <br />
                             <ul class="footer-social-icons">
                                 <li><a href="#" class="fa fa-facebook"></a></li>
                                 <li><a href="#" class="fa fa-twitter"></a></li>
                                 <li><a href="#" class="fa fa-google-plus"></a></li>
+                                <li><a href="mailto:admin@isnblogistics.com.au" class="fa fa-envelope"></a></li>
                             </ul>
                             <!-- .footer-social-icons end -->
                         </li>
@@ -773,7 +796,7 @@
     <!-- styleswitcher script -->
     <script src="js/include.js"></script>
     <!-- custom js functions -->
-
+    
     <script>
         /* <![CDATA[ */
         jQuery(document).ready(function($) {
