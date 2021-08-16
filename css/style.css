@@ -1,7 +1,3 @@
-/* 
-    Author     : Pixel Industry
-    Website    : www.pixel-industry.com
-*/
 
 /* 
     TABLE OF CONTENTS
@@ -3653,11 +3649,56 @@ blockquote {
     -moz-border-radius: 25px;
     float: right;
     color: #fff;
-    -webkit-transition: all 0.2s ease 0s;
+    /*-webkit-transition: all 0.2s ease 0s;
     -moz-transition: all 0.2s ease 0s;
     -o-transition: all 0.2s ease 0s;
     -ms-transition: all 0.2s ease 0s;
-    transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;*/
+}
+
+
+
+.wpcf71 fieldset {
+    margin-bottom: 15px;
+}
+
+.wpcf71 label {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.wpcf71-text,
+.wpcf71-select,
+.wpcf71-textarea {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 8px 15px;
+}
+
+.wpcf71 .wpcf71-submit {
+    padding: 13px 40px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    float: right;
+    background-color: #0068bd;
+    color: #fff;
+    /*-webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    -ms-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;*/
 }
 
 #map {
@@ -4005,6 +4046,7 @@ blockquote {
     display: none;
     text-indent: -9999px;
     background-image: url('../img/to-top.png');
+    background-size: contain;
     background-repeat: no-repeat;
     background-color: #252525;
     z-index: 100;
