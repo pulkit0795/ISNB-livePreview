@@ -1058,7 +1058,8 @@ a.download-link span i {
 }
 
 .pt-bkg01 {
-    background-image: url('../img/pics/page-title01.jpg');
+    /*background-image: url('../img/pics/page-title01.jpg');*/
+    background-image: url('../img/custom/aboutus1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -1112,13 +1113,15 @@ a.download-link span i {
 }
 
 .pt-bkg10 {
-    background-image: url('../img/pics/page-title10.jpg');
+    background-image: url('../img/custom/storage2.jpg');
+    /*background-image: url('../img/pics/page-title10.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .pt-bkg11 {
-    background-image: url('../img/pics/page-title11.jpg');
+    background-image: url('../img/custom/warehouse2.jpg');
+    /*background-image: url('../img/pics/page-title11.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -1162,15 +1165,16 @@ a.download-link span i {
 }
 
 .page-content.column-img-bkg {
+    /*height: 500px;*/
     padding: 0;
 }
 
 .page-content.column-img-bkg .row {
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 .custom-col-padding-both {
-    padding: 120px 70px;
+    padding: 80px 70px;
 }
 
 .custom-col-padding-bottom {
@@ -1224,7 +1228,7 @@ a.download-link span i {
 
 .page-content.parallax {
     padding-top: 100px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1769,10 +1773,11 @@ blockquote {
 }
 
 .intro-title p {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 27px;
     color: #333;
-    font-family: 'Raleway', 'Open Sans', Arial, sans-serif;
+    /*font-family: 'Raleway', 'Open Sans', Arial, sans-serif;*/
+    font-family: serif;
     text-align: center;
 }
 
@@ -4054,3 +4059,55 @@ blockquote {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
+
+/*
+    BLINK ANIMATION mostly used for image (blinking image)
+    ------------------------------------------------------------------------- */
+
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.objblink {
+-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blink;
+    -webkit-animation-timing-function: ease-in-out;
+    
+-moz-animation-direction: normal;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-name: blink;
+    -moz-animation-timing-function: ease-in-out;    
+}
+
+
+
+
+
+
