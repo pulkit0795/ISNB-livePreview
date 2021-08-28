@@ -4107,7 +4107,83 @@ blockquote {
 }
 
 
+.tracking-steps-section {
+    background: #303540 url("../img/pics/back-2.png") no-repeat center bottom;
+    background-color: #303540;
+    padding: 6rem 1.5rem 10rem;
+}
 
+.tracking-steps-section .heading-title-top {
+    color: rgba(255, 255, 255, 0.6);
+}
 
+.tracking-steps-section .heading-title.style-3 {
+    color: white;
+}
+
+.tracking-steps-section .steps {
+    margin-top: 10px;
+    margin-bottom: 116px;
+}
+
+.tracking-steps-section .steps .step-item .step-marker {
+    background-color: #303540 !important;
+    border: 1px solid #424754 !important;
+    height: 65px;
+    width: 65px;
+    top: -15px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white !important;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.tracking-steps-section .steps .step-item .step-details {
+    margin-top: 5.5rem;
+    margin-left: 2.5em;
+    margin-right: 1em;
+}
+
+.tracking-steps-section .steps .step-item .step-details p:not(.step-title) {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.tracking-steps-section .steps .step-item .step-details .step-title {
+    color: white;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.tracking-steps-section .steps .step-item.active .step-marker, .tracking-steps-section .steps .step-item:hover .step-marker {
+    background-color: #0063dd !important;
+    border: 1px solid #0063dd !important;
+}
+
+.tracking-steps-section .steps .step-item:not(:first-child)::before {
+    height: 1px;
+    width: 200%;
+    left: -92%;
+    background: #424754 !important;
+    top: 17px;
+}
+
+.steps {
+    font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    body .steps .step-item {
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 1087px) {
+    body .tracking-steps-section .steps .step-item .step-details .step-title {
+        font-size: 14px;
+    }
+}
 
 
