@@ -1101,7 +1101,8 @@ a.download-link span i {
 }
 
 .pt-bkg08 {
-    background-image: url('../img/pics/page-title08.jpg');
+    background-image: url('../img/custom/contact.png');
+/*     background-image: url('../img/pics/page-title08.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
 }
