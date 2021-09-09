@@ -1101,7 +1101,12 @@ a.download-link span i {
 }
 
 .pt-bkg08 {
-    background-image: url('../img/custom/contact.png');
+    background-image: url('../img/custom/contact.png'); /* no-repeat center center fixed;*/
+    /*min-height: 100%;*/
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
     /*background-image: url('../img/pics/page-title08.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -1176,6 +1181,11 @@ a.download-link span i {
 
 .custom-col-padding-both {
     padding: 80px 70px;
+}
+
+.custom-col-padding-horizontal {
+
+    padding: 40px 70px;
 }
 
 .custom-col-padding-bottom {
