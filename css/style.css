@@ -1077,7 +1077,8 @@ a.download-link span i {
 }
 
 .pt-bkg04 {
-    background-image: url('../img/pics/page-title04.jpg');
+    /*background-image: url('../img/pics/page-title04.jpg');*/
+    background-image: url('../img/custom/transportation-d.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -1119,14 +1120,14 @@ a.download-link span i {
 }
 
 .pt-bkg10 {
-    background-image: url('../img/custom/storage2.jpg');
+    background-image: url('../img/custom/storage-new.png');
     /*background-image: url('../img/pics/page-title10.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .pt-bkg11 {
-    background-image: url('../img/custom/warehouse2.jpg');
+    background-image: url('../img/custom/storage2.jpg');
     /*background-image: url('../img/pics/page-title11.jpg');*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -1202,6 +1203,18 @@ a.download-link span i {
 
 .img-bkg03 {
     background-image: url('../img/pics/img-bkg03.jpg');
+}
+
+.img-bkg04 {
+    background-image: url('../img/custom/img-bkg04.jpg');
+}
+
+.img-bkg05 {
+    background-image: url('../img/custom/img-bkg05.jpg');
+}
+
+.img-bkg06 {
+    background-image: url('../img/custom/img-bkg06.jpg');
 }
 
 *[class*="img-bkg"] {
