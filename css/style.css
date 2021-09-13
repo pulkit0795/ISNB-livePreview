@@ -1071,7 +1071,8 @@ a.download-link span i {
 }
 
 .pt-bkg03 {
-    background-image: url('../img/pics/page-title03.jpg');
+    /*background-image: url('../img/pics/page-title03.jpg');*/
+    background-image: url('../img/custom/page-title03-d.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
