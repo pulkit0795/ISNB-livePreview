@@ -990,14 +990,17 @@ a.download-link span i {
     ========================================================================= */
 
 .page-title-style01 {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    /*padding-top: 5%;*/
+    /*padding-top: 70px;*/
+    padding-bottom: 5%;
+    /*padding-bottom: 70px;*/
     margin-bottom: 70px;
 }
 
 .page-title-negative-top {
     margin-top: 0 !important;
-    padding-top: 185px;
+    /*padding-top: 185px;*/
+    padding-top: 12%;
 }
 
 .page-title-style01 .row,
@@ -1249,6 +1252,7 @@ a.download-link span i {
 .page-title-style01+.page-content.custom-bkg,
 .page-title-style02+.page-content.custom-bkg {
     margin-top: -70px;
+    /*margin-top: 20%;*/
 }
 
 .page-content.parallax {
