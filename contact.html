@@ -587,9 +587,11 @@
                         // type: 'POST',
                         // url: "contact.php",
                         method:'POST',
-                        url:"https://formsubmit.co/ajax/5b6d19881d7b1e706950c71a70e88338",
+                        url:"https://formsubmit.co/ajax/pingpulkit@yahoo.com",
+                        accepts: 'application/json',
                         data: ({
                             _subject: "New Enquiry from "+ name,
+                            _replyto: email,
                             Inquiry: inquiry,
                             Name: name,
                             Email: email,
